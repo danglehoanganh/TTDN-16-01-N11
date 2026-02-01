@@ -1,0 +1,36 @@
+<!-- -*- coding: utf-8 -*- -->
+<odoo>
+    <data>
+        <!-- 
+        MỨC 2: CẤU HÌNH TỰ ĐỘNG HÓA QUY TRÌNH
+        Các automated actions đã được implement trong Python code
+        File này để tham khảo, các automation đã hoạt động qua override methods
+        -->
+        
+        <!-- Commented out để tránh conflict với automation trong code -->
+        <!--
+        <record id="auto_action_chi_phi_cho_duyet" model="base.automation">
+            <field name="name">Thông báo chi phí chờ duyệt</field>
+            <field name="model_id" ref="model_chi_phi"/>
+            <field name="trigger">on_create_or_write</field>
+            <field name="filter_domain">[('trang_thai', '=', 'cho_duyet')]</field>
+            <field name="state">code</field>
+            <field name="code">
+if record.nguoi_duyet:
+    log('Chi phí %s đang chờ duyệt' % record.ma_chi_phi)
+            </field>
+        </record>
+        -->
+        -->
+        
+        <!-- NOTE: Các automation đã được implement trong Python code:
+             1. NhanVienExtend.create() - Tự động tạo bảng lương khi thêm NV
+             2. BangLuong.write() - Tự động tạo phiếu chi khi thanh toán lương
+             3. ChiPhi.write() - Tự động tạo phiếu chi khi duyệt chi phí
+             4. BaoTriSuaChuaExtend.create() - Tự động tạo chi phí khi bảo trì
+             5. MuonTraExtend.write() - Tự động tạo chi phí bồi thường
+             6. ThuChi.write() - Tự động cập nhật báo cáo khi xác nhận phiếu
+        -->
+        
+    </data>
+</odoo>

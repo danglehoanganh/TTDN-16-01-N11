@@ -47,11 +47,13 @@ Tạo tệp **odoo.conf** có nội dung như sau:
 ```
 [options]
 addons_path = addons
+admin_passwd = 1111
 db_host = localhost
 db_password = odoo
 db_user = odoo
-db_port = 5432
+db_port = 5431
 xmlrpc_port = 8069
+
 ```
 Có thể kế thừa từ **odoo.conf.template**
 

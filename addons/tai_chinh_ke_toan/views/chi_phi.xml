@@ -1,0 +1,66 @@
+<!-- -*- coding: utf-8 -*- -->
+<odoo>
+    <data>
+        <!-- Tree view -->
+        <record id="view_chi_phi_tree" model="ir.ui.view">
+            <field name="name">chi.phi.tree</field>
+            <field name="model">chi_phi</field>
+            <field name="arch" type="xml">
+                <tree string="Chi phí">
+                    <field name="ma_chi_phi"/>
+                    <field name="ten_chi_phi"/>
+                    <field name="loai_chi_phi"/>
+                    <field name="so_tien"/>
+                    <field name="ngay_chi"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_chi_phi_form" model="ir.ui.view">
+            <field name="name">chi.phi.form</field>
+            <field name="model">chi_phi</field>
+            <field name="arch" type="xml">
+                <form string="Chi phí">
+                    <header>
+                        <field name="trang_thai" widget="statusbar" clickable="True"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="ma_chi_phi"/>
+                                <field name="ten_chi_phi"/>
+                                <field name="loai_chi_phi"/>
+                                <field name="so_tien"/>
+                                <field name="ngay_chi"/>
+                                <field name="trang_thai"/>
+                            </group>
+                            <group string="Tích hợp dữ liệu">
+                                <field name="nhan_vien_id" attrs="{'invisible': [('loai_chi_phi', '!=', 'nhan_su')]}"/>
+                                <field name="ho_ten" attrs="{'invisible': [('loai_chi_phi', '!=', 'nhan_su')]}"/>
+                                <field name="tai_san_id" attrs="{'invisible': [('loai_chi_phi', '!=', 'tai_san')]}"/>
+                                <field name="ten_tai_san" attrs="{'invisible': [('loai_chi_phi', '!=', 'tai_san')]}"/>
+                                <field name="nguoi_duyet"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="mo_ta"/>
+                        </group>
+                        <group>
+                            <field name="file_dinh_kem" filename="file_name"/>
+                            <field name="file_name" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_chi_phi" model="ir.actions.act_window">
+            <field name="name">Chi phí</field>
+            <field name="res_model">chi_phi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

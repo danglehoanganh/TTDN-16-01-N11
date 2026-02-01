@@ -1,0 +1,37 @@
+<!-- -*- coding: utf-8 -*- -->
+<odoo>
+    <data>
+        <!-- Menu chính Tài chính kế toán -->
+        <menuitem id="menu_tai_chinh_ke_toan_root"
+                  name="Tài chính kế toán"
+                  sequence="10"/>
+        
+        <!-- Menu Quản lý lương -->
+        <menuitem id="menu_quan_ly_luong"
+                  name="Quản lý lương"
+                  parent="menu_tai_chinh_ke_toan_root"
+                  action="action_bang_luong"
+                  sequence="10"/>
+        
+        <!-- Menu Chi phí -->
+        <menuitem id="menu_chi_phi"
+                  name="Chi phí"
+                  parent="menu_tai_chinh_ke_toan_root"
+                  action="action_chi_phi"
+                  sequence="20"/>
+        
+        <!-- Menu Thu chi -->
+        <menuitem id="menu_thu_chi"
+                  name="Thu chi"
+                  parent="menu_tai_chinh_ke_toan_root"
+                  action="action_thu_chi"
+                  sequence="30"/>
+        
+        <!-- Menu Báo cáo tài chính -->
+        <menuitem id="menu_bao_cao_tai_chinh"
+                  name="Báo cáo tài chính"
+                  parent="menu_tai_chinh_ke_toan_root"
+                  action="action_bao_cao_tai_chinh"
+                  sequence="40"/>
+    </data>
+</odoo>

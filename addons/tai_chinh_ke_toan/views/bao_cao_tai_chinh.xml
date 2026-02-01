@@ -1,0 +1,81 @@
+<!-- -*- coding: utf-8 -*- -->
+<odoo>
+    <data>
+        <!-- Tree view -->
+        <record id="view_bao_cao_tai_chinh_tree" model="ir.ui.view">
+            <field name="name">bao.cao.tai.chinh.tree</field>
+            <field name="model">bao_cao_tai_chinh</field>
+            <field name="arch" type="xml">
+                <tree string="Báo cáo tài chính">
+                    <field name="ten_bao_cao"/>
+                    <field name="loai_bao_cao"/>
+                    <field name="tu_ngay"/>
+                    <field name="den_ngay"/>
+                    <field name="tong_thu"/>
+                    <field name="tong_chi_luong"/>
+                    <field name="tong_chi_phi"/>
+                    <field name="lai_lo"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_bao_cao_tai_chinh_form" model="ir.ui.view">
+            <field name="name">bao.cao.tai.chinh.form</field>
+            <field name="model">bao_cao_tai_chinh</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo tài chính">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="ten_bao_cao"/>
+                                <field name="loai_bao_cao"/>
+                            </group>
+                            <group>
+                                <field name="tu_ngay"/>
+                                <field name="den_ngay"/>
+                            </group>
+                        </group>
+                        
+                        <group string="Tổng hợp thu">
+                            <field name="tong_thu" class="oe_read_only"/>
+                        </group>
+                        
+                        <group string="Tổng hợp chi (Tích hợp từ các module)">
+                            <group>
+                                <field name="tong_chi_luong" class="oe_read_only"/>
+                                <field name="tong_chi_phi" class="oe_read_only"/>
+                            </group>
+                            <group>
+                                <field name="chi_nhan_su" class="oe_read_only"/>
+                                <field name="chi_tai_san" class="oe_read_only"/>
+                                <field name="chi_khac" class="oe_read_only"/>
+                            </group>
+                        </group>
+                        
+                        <group string="Kết quả">
+                            <field name="lai_lo" class="oe_read_only"/>
+                        </group>
+                        
+                        <group>
+                            <group>
+                                <field name="nguoi_lap"/>
+                                <field name="ngay_lap"/>
+                            </group>
+                            <group>
+                                <field name="ghi_chu"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_bao_cao_tai_chinh" model="ir.actions.act_window">
+            <field name="name">Báo cáo tài chính</field>
+            <field name="res_model">bao_cao_tai_chinh</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

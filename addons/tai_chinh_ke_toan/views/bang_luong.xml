@@ -1,0 +1,74 @@
+<!-- -*- coding: utf-8 -*- -->
+<odoo>
+    <data>
+        <!-- Tree view -->
+        <record id="view_bang_luong_tree" model="ir.ui.view">
+            <field name="name">bang.luong.tree</field>
+            <field name="model">bang_luong</field>
+            <field name="arch" type="xml">
+                <tree string="Bảng lương">
+                    <field name="nhan_vien_id"/>
+                    <field name="ho_ten"/>
+                    <field name="thang"/>
+                    <field name="nam"/>
+                    <field name="luong_co_ban"/>
+                    <field name="tong_luong"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_bang_luong_form" model="ir.ui.view">
+            <field name="name">bang.luong.form</field>
+            <field name="model">bang_luong</field>
+            <field name="arch" type="xml">
+                <form string="Bảng lương">
+                    <header>
+                        <field name="trang_thai" widget="statusbar" clickable="True"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="Thông tin nhân viên (Tích hợp từ module Nhân sự)">
+                                <field name="nhan_vien_id"/>
+                                <field name="ho_ten"/>
+                                <field name="email"/>
+                            </group>
+                            <group string="Kỳ lương">
+                                <field name="thang"/>
+                                <field name="nam"/>
+                                <field name="trang_thai"/>
+                                <field name="ngay_thanh_toan"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Các khoản thu nhập">
+                                <field name="luong_co_ban"/>
+                                <field name="phu_cap"/>
+                                <field name="thuong"/>
+                            </group>
+                            <group string="Các khoản khấu trừ">
+                                <field name="khau_tru"/>
+                                <field name="bao_hiem"/>
+                                <field name="thue"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="tong_luong" class="oe_read_only"/>
+                        </group>
+                        <group>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_bang_luong" model="ir.actions.act_window">
+            <field name="name">Bảng lương</field>
+            <field name="res_model">bang_luong</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

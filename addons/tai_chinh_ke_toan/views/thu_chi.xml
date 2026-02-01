@@ -1,0 +1,61 @@
+<!-- -*- coding: utf-8 -*- -->
+<odoo>
+    <data>
+        <!-- Tree view -->
+        <record id="view_thu_chi_tree" model="ir.ui.view">
+            <field name="name">thu.chi.tree</field>
+            <field name="model">thu_chi</field>
+            <field name="arch" type="xml">
+                <tree string="Thu chi">
+                    <field name="ma_phieu"/>
+                    <field name="loai_phieu"/>
+                    <field name="noi_dung"/>
+                    <field name="so_tien"/>
+                    <field name="ngay"/>
+                    <field name="hinh_thuc"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form view -->
+        <record id="view_thu_chi_form" model="ir.ui.view">
+            <field name="name">thu.chi.form</field>
+            <field name="model">thu_chi</field>
+            <field name="arch" type="xml">
+                <form string="Thu chi">
+                    <header>
+                        <field name="trang_thai" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="ma_phieu"/>
+                                <field name="loai_phieu"/>
+                                <field name="noi_dung"/>
+                                <field name="so_tien"/>
+                            </group>
+                            <group>
+                                <field name="ngay"/>
+                                <field name="hinh_thuc"/>
+                                <field name="nhan_vien_id"/>
+                                <field name="ho_ten"/>
+                                <field name="nguoi_lap"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_thu_chi" model="ir.actions.act_window">
+            <field name="name">Thu chi</field>
+            <field name="res_model">thu_chi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
